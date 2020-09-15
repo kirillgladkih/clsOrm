@@ -1,0 +1,13 @@
+{
+    "name": "kirill/cls",
+    "license": "free",
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\" : "core",
+            "Client\\" : "client",
+            "Modules\\" : "modules"
+        }
+    }
+}
