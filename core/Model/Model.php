@@ -19,27 +19,27 @@ class Model implements IModel
         }
     }
 
-    function getHash()
+    final function getHash()
     {
         return $this->hash;
     }
 
-    function __set($name, $value)
+    final function __set($name, $value)
     {
         ModelContainer::set($this->hash, $name, $value);
     }
 
-    function __get($name)
+    final function __get($name)
     {
         return ModelContainer::get($this->hash, $name);
     }
 
-    function all()
+    final function all()
     {
         return ModelCollection::all(get_class($this));
     }
 
-    function create($data)
+    final function create($data)
     {
         $itemCollection = new self();
 
@@ -52,17 +52,17 @@ class Model implements IModel
         return true;
     }
 
-    function find($hash)
+    final function find($hash)
     {
         return ModelCollection::find(get_class($this), $hash);
     }
 
-    function remove($hash)
+    final function remove($hash)
     {
         return ModelCollection::remove(get_class($this), $hash);
     }
 
-    function update($hash, $data)
+    final function update($hash, $data)
     {
         $itemCollection = $this->find($hash);
 

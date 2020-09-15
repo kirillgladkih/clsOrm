@@ -11,3 +11,27 @@ function dd($data){
     echo "<pre>";
 //    die();
 }
+
+//$model = new \Core\Model\Model();
+//
+//$model->create(['name' => 'name1']);
+//$model->create(['name' => 'name2']);
+//$model->create(['name' => 'name3']);
+//
+//$i = 0;
+//global $h;
+//foreach ($model->all() as $index => $item) {
+//    $i++;
+//    if($i == 2){
+//        $h = $item->getHash();
+//    }
+//}
+//
+//$model->update($h, ['name' => 'name4']));
+//
+//dd($model->find($h)->name);
+
+//foreach ($model->all() as $index => $item) {
+//   dd($item->name);
+//}
+
