@@ -12,6 +12,33 @@ function dd($data){
 //    die();
 }
 
+$model = new \Core\Model\Model();
+
+
+
+//dd($model->create(['name' => 'name1']));
+$model->create(['name' => 'name2']);
+$model->create(['name' => 'name3']);
+$model->create(['name' => 'name4']);
+
+
+//dd(\Core\Collection\ModelCollection::all(get_class($model)));
+
+$collection = $model->all();
+
+$randModelHash = $collection[array_rand($collection)]->getHash();
+$randModel     = $collection[$randModelHash];
+
+
+
+
+//
+//foreach ($model->all() as $item){
+//  dd($item->name);
+//}
+//
+//dd($model);
+
 //$model = new \Core\Model\Model();
 //
 //$model->create(['name' => 'name1']);

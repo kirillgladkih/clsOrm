@@ -40,4 +40,10 @@ interface IModelCollection
     * @return Array | bool
     * */
     static function all($class);
+
+    /*
+     * get Hash array
+     * @return Array
+     * */
+    static function getHashArray();
 }

@@ -47,9 +47,8 @@ class Model implements IModel
             ModelContainer::set($itemCollection->hash, $fill, $data[$fill]);
         }
 
-        ModelCollection::create(get_class($this), $itemCollection);
+       return  ModelCollection::create(get_class($this), $itemCollection);
 
-        return true;
     }
 
     final function find($hash)
