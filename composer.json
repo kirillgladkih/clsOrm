@@ -7,7 +7,7 @@
             "Core\\" : "core",
             "Client\\" : "client",
             "Modules\\" : "modules",
-            "Test\\Core\\" : "test/core"
+            "Test\\" : "test"
         }
     },
     "require-dev": {
