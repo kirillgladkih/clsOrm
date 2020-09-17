@@ -24,5 +24,5 @@ interface IModelContainer
      * get All ModelContainer Item
      * @return Array
      * */
-    static function all();
+    static function all($hash);
 }

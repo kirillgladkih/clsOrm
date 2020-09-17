@@ -4,13 +4,14 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Core\\" : "core",
-            "Client\\" : "client",
-            "Modules\\" : "modules",
-            "Test\\" : "test"
+            "Core\\": "Core",
+            "Client\\": "Client",
+            "Modules\\": "Modules",
+            "Test\\": "Test"
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.3"
+        "phpunit/phpunit": "^9.3",
+        "symfony/var-dumper": "^5.1"
     }
 }

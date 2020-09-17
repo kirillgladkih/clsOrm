@@ -1,35 +1,57 @@
 <?php
+
+use Core\Collection\ModelCollection;
+use Core\Model\TestModel;
+use Test\Core\Model\ExModel;
+
+require_once("vendor/autoload.php");
+
+
+
+
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-require_once ("vendor/autoload.php");
-
-function dd($data){
-    echo "<pre>";
-    var_dump($data);
-    echo "<pre>";
-//    die();
-}
-
-$model = new \Core\Model\Model();
 
 
+\Core\Model\TestModel::create(['name' => 'name1']);
+\Core\Model\TestModel::create(['name' => 'name2']);
+\Core\Model\TestModel::create(['name' => 'name3']);
+\Core\Model\TestModel::create(['name' => 'name4']);
+\Core\Model\TestModel::create(['name' => 'name5']);
 
-//dd($model->create(['name' => 'name1']));
-$model->create(['name' => 'name2']);
-$model->create(['name' => 'name3']);
-$model->create(['name' => 'name4']);
+$hash = array_rand(ModelCollection::getHashArray());
+
+// TestModel::remove(ModelCollection::getHashArray()[$hash]);
+
+$test = new TestModel();
+$test->name = 'hui';
 
 
-//dd(\Core\Collection\ModelCollection::all(get_class($model)));
-
-$collection = $model->all();
-
-$randModelHash = $collection[array_rand($collection)]->getHash();
-$randModel     = $collection[$randModelHash];
 
 
+dd(ModelCollection::getHashArray(), TestModel::all(), ModelCollection::$collection);
+
+//$model = new \Core\Model\Model();
+//
+//
+//
+////dd($model->create(['name' => 'name1']));
+//$model->create(['name' => 'name2']);
+//$model->create(['name' => 'name3']);
+//$model->create(['name' => 'name4']);
+//
+//
+////dd(\Core\Collection\ModelCollection::all(get_class($model)));
+//
+//$collection = $model->all();
+//
+//$randModelHash = $collection[array_rand($collection)]->getHash();
+//$randModel     = $collection[$randModelHash];
+//
+//$t = new \Core\Model\TestModel ();
+//$t->all();
 
 
 //
@@ -61,4 +83,3 @@ $randModel     = $collection[$randModelHash];
 //foreach ($model->all() as $index => $item) {
 //   dd($item->name);
 //}
-

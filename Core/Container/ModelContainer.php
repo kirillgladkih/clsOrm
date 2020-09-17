@@ -7,8 +7,12 @@ namespace Core\Container;
 class ModelContainer implements IModelContainer
 {
     private static $container = [];
-    private function __construct(){}
-    private function __clone(){}
+    private function __construct()
+    {
+    }
+    private function __clone()
+    {
+    }
 
     static function get($hash, $name)
     {
@@ -20,8 +24,8 @@ class ModelContainer implements IModelContainer
         self::$container[$hash][$name] = $value;
     }
 
-    static function all()
+    static function all($hash)
     {
-        return self::$container;
+        return static::$container[$hash];
     }
 }
