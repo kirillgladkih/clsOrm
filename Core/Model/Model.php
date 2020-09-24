@@ -21,6 +21,28 @@ class Model implements IModel
         }
     }
 
+    public function save()
+    {
+        $data = [];
+
+        foreach(static::$fills as $fill){
+            $data[$fill] = $this->$fill;
+        }  
+
+        if(static::create($data)){
+            return true;
+        }
+
+        return false; 
+    }
+
+    public function delete()
+    {
+        if(static::remove($this->hash)){
+            return false;
+        }
+    }
+
     public function __debugInfo()
     {
         $r = new ReflectionClass(static::class);
@@ -43,15 +65,15 @@ class Model implements IModel
         return $this->hash;
     }
 
-    // final function __set($name, $value)
-    // {
-    //     ModelContainer::set($this->hash, $name, $value);
-    // }
+    final function __set($name, $value)
+    {
+        ModelContainer::set($this->hash, $name, $value);
+    }
 
-    // final function __get($name)
-    // {
-    //     return ModelContainer::get($this->hash, $name);
-    // }
+    final function __get($name)
+    {
+        return ModelContainer::get($this->hash, $name);
+    }
 
     final static function all()
     {

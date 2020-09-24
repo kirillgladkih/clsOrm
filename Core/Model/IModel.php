@@ -11,6 +11,19 @@ interface IModel
      * @return String
      * */
     function getHash();
+    
+    /**
+     * Сохранить модель
+     *
+     * @return bool
+     */
+    function save();
+    /**
+     * Удалить модель
+     *
+     * @return void
+     */
+    function delete();
 
     /*
      * Удаление модели из пула объектов
